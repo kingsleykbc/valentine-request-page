@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import './RequestView.css';
+import normalBearImg from '/images/bear.png';
+import angryBearImg from '/images/bear-mad.png';
+import excitedBearImg from '/images/bear-excited.png';
 
-const normalBear = '/images/bear.png';
-const angryBear = '/images/bear-mad.png';
-const excitedBear = '/images/bear-excited.png';
+const normalBear = normalBearImg;
+const angryBear = angryBearImg;
+const excitedBear = excitedBearImg;
 
 function RequestView({ onYesClick }) {
 	const [bearImage, setBearImage] = useState(normalBear);
