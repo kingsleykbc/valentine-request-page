@@ -79,9 +79,16 @@
 }
 
 @keyframes shakeContinuous {
-	0%, 100% { transform: translateX(-50%) rotate(0deg); }
-	25% { transform: translateX(-50%) rotate(-8deg); }
-	75% { transform: translateX(-50%) rotate(8deg); }
+	0%,
+	100% {
+		transform: translateX(-50%) rotate(0deg);
+	}
+	25% {
+		transform: translateX(-50%) rotate(-8deg);
+	}
+	75% {
+		transform: translateX(-50%) rotate(8deg);
+	}
 }
 
 @keyframes bounce {
