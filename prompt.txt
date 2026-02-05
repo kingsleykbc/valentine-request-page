@@ -1,0 +1,17 @@
+Generate this simple valentine request website.
+
+Opening the site shows an envelop with a click to open prompt
+
+Clicking the envelope opens the request (add an animated transition between the 2)
+
+If no is clicked, replace the bear with the angry character and a funny "dem no born you well" message then disable the no button 
+
+If yes is clicked, show the excited bear, transition the background to purple and show the confirmation message. Also shoot confetti.
+
+
+TODO
+- Make initial background and text more pink (use colors in design  )
+- Add a pattern with transparent blacks in the background
+- Use proper bear images
+- Fix text formatting
+- Deploy

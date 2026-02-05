@@ -1,0 +1,206 @@
+.request-view {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 75px;
+}
+
+.content-card {
+	background: rgba(255, 255, 255, 0.95);
+	padding: 50px;
+	border-radius: 15px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	max-width: 500px;
+	position: relative;
+	animation: slideIn 0.6s ease-out;
+	z-index: 2;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.bear-container {
+	width: 190px;
+	height: 190px;
+	position: absolute;
+	top: -100px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: transform 0.3s ease;
+	z-index: 1;
+}
+
+.bear-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.bear-container.shake {
+	animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	25% {
+		transform: translateX(-50%) translateX(-10px) rotate(-5deg);
+	}
+	75% {
+		transform: translateX(-50%) translateX(10px) rotate(5deg);
+	}
+}
+
+.bear-container.bounce {
+	animation: bounce 0.6s ease;
+}
+
+.bear-container.shake-forever {
+	animation: shakeContinuous 0.5s ease-in-out infinite;
+}
+
+@keyframes shakeContinuous {
+	0%, 100% { transform: translateX(-50%) rotate(0deg); }
+	25% { transform: translateX(-50%) rotate(-8deg); }
+	75% { transform: translateX(-50%) rotate(8deg); }
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	50% {
+		transform: translateX(-50%) translateY(-30px);
+	}
+}
+
+.main-heading {
+	font-size: 32px;
+	color: #a93442;
+	margin-bottom: 20px;
+	transition: all 0.5s ease;
+}
+
+.main-heading.success {
+	color: #724689;
+}
+
+.message {
+	font-size: 18px;
+	color: #555;
+	margin-bottom: 0;
+	line-height: 1.6;
+	transition: all 0.5s ease;
+}
+
+.message.angry {
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.message.success {
+	font-size: 20px;
+}
+
+.button-container {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+.btn {
+	padding: 15px 40px;
+	font-size: 20px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn,
+.no-btn {
+	background: linear-gradient(135deg, #c54552, #8f3942);
+	color: white;
+}
+
+.yes-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.no-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	display: none;
+}
+
+.error-message {
+	margin-top: 20px;
+	padding: 15px 25px;
+	background: rgba(255, 0, 0, 0.1);
+	border: 2px solid #ff0000;
+	border-radius: 10px;
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	animation: errorShake 0.5s ease;
+}
+
+@keyframes errorShake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-5px);
+	}
+	75% {
+		transform: translateX(5px);
+	}
+}
+
+@media (max-width: 600px) {
+	.content-card {
+		padding: 30px;
+		margin: 0 20px;
+	}
+
+	.main-heading {
+		font-size: 24px;
+	}
+
+	.message {
+		font-size: 16px;
+	}
+
+	.btn {
+		padding: 12px 30px;
+		font-size: 18px;
+	}
+}
